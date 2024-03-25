@@ -32,24 +32,35 @@ $goods = mysqli_fetch_all($goods);
         <?php
         foreach ($goods as $good) {
             ?>
-        <tr>
-            <td>
-                <?= $good[0] ?>
-            </td>
-            <td>
-                <?= $good[1] ?>
-            </td>
-            <td>
-                <?= $good[2] ?>
-            </td>
-            <td>
-                <?= $good[3] ?>
-            </td>
-        </tr>
-        <?php
+            <tr>
+                <td>
+                    <?= $good[0] ?>
+                </td>
+                <td>
+                    <?= $good[1] ?>
+                </td>
+                <td>
+                    <?= $good[2] ?>
+                </td>
+                <td>
+                    <?= $good[3] ?>
+                </td>
+            </tr>
+            <?php
         }
         ?>
     </table>
+
+    <h2>Добавить новый товар</h2>
+    <form action="vendor/create.php" method="post">
+        <p>Название</p>
+        <input type="text" name="title" required>
+        <p>Описание</p>
+        <textarea name="description" required></textarea>
+        <p>Цена</p>
+        <input type="number" name="price" required>
+        <button type="submit">Добавить</button>
+    </form>
 
 </body>
 
