@@ -28,25 +28,27 @@ $goods = mysqli_fetch_all($goods);
             <th>Название</th>
             <th>Описание</th>
             <th>Цена</th>
+            <th>&#9998;</th>
         </tr>
         <?php
         foreach ($goods as $good) {
             ?>
-            <tr>
-                <td>
-                    <?= $good[0] ?>
-                </td>
-                <td>
-                    <?= $good[1] ?>
-                </td>
-                <td>
-                    <?= $good[2] ?>
-                </td>
-                <td>
-                    <?= $good[3] ?>
-                </td>
-            </tr>
-            <?php
+        <tr>
+            <td>
+                <?= $good[0] ?>
+            </td>
+            <td>
+                <?= $good[1] ?>
+            </td>
+            <td>
+                <?= $good[2] ?>
+            </td>
+            <td>
+                <?= $good[3] ?>
+            </td>
+            <td><a href="update.php?id=<?= $good[0] ?>">Обновить</a></td>
+        </tr>
+        <?php
         }
         ?>
     </table>
